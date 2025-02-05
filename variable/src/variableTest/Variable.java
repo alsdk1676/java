@@ -20,8 +20,7 @@ public class Variable {
 		System.out.println(e);
 		System.out.println(f);
 		System.out.println(g);
-		
-
+	
 		
 	}
 }

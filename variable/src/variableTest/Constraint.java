@@ -6,7 +6,10 @@ public class Constraint {
 		final int ON = 12345;
 //		ON = 10; // final : 상수 => 변경 불가능
 		final String OFF = "!@#";
+		
+		System.out.println(ON);
+		System.out.println(OFF);
 				
 	}
-
 }
+
