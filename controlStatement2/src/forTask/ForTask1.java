@@ -40,62 +40,63 @@ public class ForTask1 {
 //			result2 += i;
 //		}
 //		System.out.println("결과 : " + result2);
+		
       
 //      플레티넘
 //      A~F까지 출력하기
-//		char i = 'A';
-//		for(int i = 65; i <= 70; i++) {
-//			i = (char)i;
-//		}
-//		System.out.println(i);
-		
-//		char a = 'A';
+//		A = 65
+//		a = 97
+		for(int i = 65; i < 71; i++) {
+			System.out.print((char)i);
+		}
+//		강사님 풀이
+		char a = 'A';
 //		for(int i = 0; i < 6; i++) {
-//			System.out.println((char)(a + i));
+//			System.out.print((char)(a + i));
 //		}
-		
-		for(char c = 'A'; c <= 'F'; c++) {
-			System.out.println(c);
-		} 
+
 		
 //      A~F까지 중 C를 제외하고 출력하기
-		for(char c = 'A'; c <= 'F'; c++) {
-			if (c == 'C') { continue; }
-			System.out.println(c);
+//		for(char c = 'A'; c <= 'F'; c++) {
+//			if (c == 'C') { continue; }
+//			System.out.println(c);
+//		}
+		
+		for(int i = 65; i < 71; i++) {
+			if(i == 67) { continue; }
+			System.out.print((char)i);
 		}
 
+//		강사님 풀이
+//		for(int i = 0; i < 5; i++) {
+//		System.out.print(i > 1 ? (char)(a + 1 + i) : (char)(a + i));
+//	}
 		
 //      다이아
 //      012340123401234 출력하기
+//		내 풀이
 //		int num = 01234;
 //		for(int i = 0; i < 3; i++) {
 //			for (int j = 0; j < 5; j ++)
 //			System.out.print(j);
 //		}
-		
-//      aBcDeF...Z까지 출력하기		
-		for(char c = 'a'; c <= 'z'; c++) {
-			if(c % 2 == 1) {
-				System.out.print(c);
-			}
+
+		for(int i = 0; i < 5; i++) {
+			 System.out.print(i); // 01234
 		}
 		
-		for(char c = 'A'; c <= 'Z'; c++) {
-			if(c % 2 == 0) {
-				System.out.print(c);
-			}
+//		강사님 풀이
+//		for(int i = 0; i < 15; i++) {
+//		System.out.print(i % 5);
+//	}
+		
+		
+//      aBcDeF...Z까지 출력하기
+//		강사님 풀이
+		int gap = 'a' - 'A';
+		for(int i = 0; i < 26; i++) {
+			System.out.print(i % 2 == 0 ? (char)(a + gap + i) : (char)(a + i));
 		}
-		
-		
-//		for(char c1 = 'a'; c1 <= 'z'; c1++) {
-//			for(char c2 ='A'; c2 <= 'Z'; c2++ )
-//				System.out.println(c2);
-//		}
-//		for(char c = 'a'; c <= 'z'; c++) {
-//			if(c % 2 == 1) {
-//				System.out.print(c);
-//				}
-//			}
 
 		
 //      
@@ -108,13 +109,6 @@ public class ForTask1 {
 //    *******
 //   *********
 		
-		for(int i = 1; i <= 5; i++) {
-			for(int j = 1; j <= 5 - i; j++) {
-				System.out.println("");
-			}
-		}
-
-
 		
 	}
 
