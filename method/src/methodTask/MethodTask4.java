@@ -22,22 +22,9 @@ public class MethodTask4 {
 //	}
 
 //  3) 한글을 정수로 바꿔주는 메소드 (일공이사 -> 1024)
-	String[] hangles = {"공", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"};
-	void hangleToInt(String str) {
-		for(int i = 0; i < str.length(); i++) {
-//			입력한 한글str의 각 인덱스 자리의 문자
-			char c = str.charAt(i);
-			for(int j = 0; j < hangles.length; j++) {
-				if(hangles[j] == c) {
-					hangles.join("");
-				}
-					
-//				}
-				
-			}
-		}
-		
-	}
+
+
+
 	
 	
 	
@@ -59,7 +46,7 @@ public class MethodTask4 {
 //		System.out.println("문자의 개수 : " + count);
 		
 
-		mt4.hangleToInt("일공이사");
+
 	}
 	
 	
