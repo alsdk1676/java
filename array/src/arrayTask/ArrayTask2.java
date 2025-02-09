@@ -41,6 +41,25 @@ public class ArrayTask2 {
 //	         }
 //	         System.out.print(charArray[i]);
 //	      }          
+//		===============================================================================
+		Scanner sc = new Scanner(System.in);
+//		String message = "문자열을 입력하세요.\nex)입력 : 안녕hI!! 출력 : 안녕Hi!!", userInput = null, result="";
+//	
+//		System.out.println(message);
+//		userInput = sc.nextLine();
+//		
+//		for(int i = 0; i < userInput.length(); i++) {
+//			char ch = userInput.charAt(i);
+//			if(ch >= 'A' && ch <= 'Z') {
+//				result += (char)(ch + 32);
+//			} else if(ch >= 'a' && ch <= 'z') {
+//				result += (char)(ch - 32);
+//			}else {
+//				result += ch;	
+//				}
+//		}
+//		System.out.println(result);
+		
 
 		
 //      2) 정수를 한글로 변경
@@ -67,7 +86,25 @@ public class ArrayTask2 {
 //			charArray[i] = (int)stringData.charAt(i);
 //			System.out.print(hangleArray[charArray[i] - 48]);
 //		}
-
+		
+//		===============================================================================
+//		String[] hangles = {"공", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구"};
+//		String message2 = "정수를 입력하세요.\nex)1024", result = "", inputNum = "";
+//		
+////		사용자에게 정수 입력받기
+//		System.out.println(message2);
+//		inputNum = sc.nextLine();
+//		
+////		정수를 문자열로 바꾸기
+//		for(int i = 0; i < inputNum.length(); i++) {
+//			char ch = inputNum.charAt(i);
+//			int num = ch - '0'; // '0' ==> 48 ex)'1'-'0' = 49 - 48 = 1
+//			result += hangles[num];
+//			
+//		}
+//		
+//		System.out.println("결과 : " + result);
+//		
 		
 //      3) 문자열과 찾을 문자를 입력받고
 //      문자열에서 문자의 개수를 찾기
@@ -100,6 +137,24 @@ public class ArrayTask2 {
 //           }
 //        }
 //        System.out.println(find + "의 갯수 : " + count);
+		
+		String message3 = "문자열을 입력하세요.", message4 = "찾을 문자 : ", inputString = null, findChar = null;
+		int count = 0;
+		
+//		사용자에게 문자열을 입력받기
+		System.out.println(message3);
+		inputString = sc.nextLine();
+		
+//		사용자에게 찾을 문자 입력받기
+		System.out.println(message4);
+		findChar = sc.nextLine();
+		
+		for(int i = 0; i < inputString.length(); i++)
+			if(inputString.charAt(i) == findChar.charAt(0)) { // 찾을 문자가 한 개이기 때문에 charAt(0)!!!
+				count++;
+			}
+		
+		System.out.println(findChar + "의 개수 : " + count);
 		
 	}
 }
