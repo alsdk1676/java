@@ -249,34 +249,85 @@ public class ArrayTask1 {
 //		평균값을 구한다.
 		
 
-		String message2 = "정수를 개수를 입력하세요.", message3 = "총합 : ", message4 = "평균 : ";
-		int length = 0, total = 0;
+//		String message2 = "정수를 개수를 입력하세요.", message3 = "총합 : ", message4 = "평균 : ";
+//		int length = 0, total = 0;
+//		double avg = 0.0;
+//		int[] arData8 = null;
+//
+////		사용자에게 정수 입력받기
+//		System.out.println(message2);
+//		length = sc.nextInt(); // 5개 입력할거임
+//		arData8 = new int[length];
+//		
+////		배열에 담기
+//		for(int i = 0; i < arData8.length; i++) {
+//			System.out.println(i + 1 + "번 째 숫자 : ");
+//			arData8[i] = sc.nextInt();
+//		}
+//		
+////		평균 구하기!
+//		for(int i = 0; i < arData8.length; i++) {
+//			total += arData8[i];
+//		}
+////		System.out.println(total);
+//		
+////		avg = (double)total / length ; 
+//		avg = total / (double)length ; 
+//		
+//		System.out.println(message3 + total);
+//		System.out.println(message4 + avg);
+
+//		5개의 정수를 입력받고 배열에 담은 후 최댓값과 최솟값을 출력하기
+//		String message5 = "5개의 정수를 입력하세요.";
+//		int[] inputArray = new int[5];
+//		
+//		System.out.println(message5);
+//		for(int i = 0; i < inputArray.length; i++) {
+//			inputArray[i] = sc.nextInt();
+//			System.out.println(inputArray[i]);
+//		}
+//		
+//		int max = inputArray[0];
+//		int min = inputArray[0];
+//		
+//		for(int i = 0; i < inputArray.length; i++) {
+//			if(inputArray[i] > max) {
+//				max = inputArray[i];
+//			} if (inputArray[i] < min) {
+//				min = inputArray[i];
+//			}
+//		}
+//		
+//		System.out.println("최댓값 : " + max);
+//		System.out.println("최솟값 : " + min);
+		
+//		사용자가 입력할 정수의 개수만큼 배열을 만든 후 정수를 입력받고 평균값을 구하기
+		String message6 = "정수의 개수를 입력하세요.";
+		int length = 0, inputNum = 0, total = 0;
 		double avg = 0.0;
-		int[] arData8 = null;
-
-//		사용자에게 정수 입력받기
-		System.out.println(message2);
-		length = sc.nextInt(); // 5개 입력할거임
-		arData8 = new int[length];
 		
-//		배열에 담기
-		for(int i = 0; i < arData8.length; i++) {
-			System.out.println(i + 1 + "번 째 숫자 : ");
-			arData8[i] = sc.nextInt();
+		// 개수 입력받기
+		System.out.println(message6);
+		length = sc.nextInt();
+		int[] userArray = new int[length];
+		
+//		개수만큼 정수 출력하기
+		for(int i = 0; i < length; i++) {
+//			userArray[i] = sc.nextInt();
+			System.out.println(i + 1 + "번 째 정수 : " );
+			userArray[i] = sc.nextInt();
 		}
 		
-//		평균 구하기!
-		for(int i = 0; i < arData8.length; i++) {
-			total += arData8[i];
+		for(int i = 0; i < length; i++) {
+			total += userArray[i];
 		}
-//		System.out.println(total);
+		System.out.println("총합 : " + total);
 		
-//		avg = (double)total / length ; 
-		avg = total / (double)length ; 
-		
-		System.out.println(message3 + total);
-		System.out.println(message4 + avg);
+		avg = (double)total / length;
+		System.out.println("평균 : " + avg);
 
+		
+		
 		
 	}
 
