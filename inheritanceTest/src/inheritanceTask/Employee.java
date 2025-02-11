@@ -7,12 +7,12 @@ class Employee extends Person{
 	// sleep 잠을 설친다.
 	// eat 야식을 먹는다.
 	
-	String emergencyMoney;
+	int nestEgg;
 	
 	public Employee() {;}
-	public Employee(String name, int age, String address, String phone,String emergencyMoney) {
+	public Employee(String name, int age, String address, String phone,int nestEgg) {
 		super(name, age, address, phone);
-		this.emergencyMoney = emergencyMoney;
+		this.nestEgg = nestEgg;
 	}
 	
 	void emergency() {
@@ -21,19 +21,16 @@ class Employee extends Person{
 	
 	@Override
 	void work() {
-//		super.work();
 		System.out.println("하루 종일 일을 한다.");
 	}
 	
 	@Override
 	void sleep() {
-//		super.sleep();
 		System.out.println("잠을 설친다.");
 	}
 	
 	@Override
 	void eat() {
-//		super.eat();
 		System.out.println("야식을 먹는다.");
 	}
 	

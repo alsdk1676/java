@@ -40,8 +40,7 @@ public class InheritanceTest2 {
 		Monkey kingkong = new Monkey();
 //		kingkong.walk(); // 두 발로 걷기
 //		kingkong.walkMonkey();
-		kingkong.walk(); // 자식의 walk()
+		kingkong.walk(); // 자식의 walk() "네 발로 걷기"
 	}
-	
 
 }

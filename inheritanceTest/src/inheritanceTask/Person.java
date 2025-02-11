@@ -21,7 +21,7 @@ class Person {
 	}
 	
 	void work() {
-		System.out.println("일을 한다.");
+		System.out.println(name + "은(는) 일을 한다");
 	}
 	
 	void sleep() {

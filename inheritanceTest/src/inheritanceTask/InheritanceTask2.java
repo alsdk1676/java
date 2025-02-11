@@ -25,25 +25,17 @@ package inheritanceTask;
 
 public class InheritanceTask2 {
 	public static void main(String[] args) {
-//		Person sma = new Person("서민아", 25, "서울", "01045411676");
-//		System.out.println(sma.name);
-		
-//		객체화
-		Person person = new Person();
-		Student student = new Student();
-		Employee employee = new Employee();
-		
-//		메서드 출력
+		Person person = new Person("홍길동", 20, "서울시 강남", "01000000000");
 		person.work();
-		person.sleep();
 		person.eat();
+		person.sleep();
 		
-		student.insta();
+		Student student = new Student("서민아", 15, "서울시 역삼동", "01000000000", "mina0000");
 		student.work();
-		student.sleep();
 		student.eat();
+		student.sleep();
 		
-		employee.emergency();
+		Employee employee = new Employee();
 		employee.work();
 		employee.sleep();
 		employee.eat();
