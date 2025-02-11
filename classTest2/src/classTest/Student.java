@@ -20,9 +20,10 @@ public class Student {
 
 //	기본 생성자
 	public Student() {;} // 생성자도 메서드
-	public Student(int number) {;} // 학번만 주어졌을 때
-	public Student(String name) {;} // 이름만 주어졌을 때
-	public Student(int number, String name) {;}
+	
+//	public Student(int number) {;} // 학번만 주어졌을 때
+//	public Student(String name) {;} // 이름만 주어졌을 때
+//	public Student(int number, String name) {;}
 
 //	생성자
 //	초기화
@@ -33,7 +34,8 @@ public class Student {
 		this.eng = eng;
 		this.math = math;
 		this.total = kor + eng + math;
-		this.average = Double.parseDouble(String.format("%.3f",total / 3.0));
+//		String.format : 형식 지정자
+		this.average = Double.parseDouble(String.format("%.3f", total / 3.0));
 	}
 
 	//총점과 평균을 출력하기
@@ -43,7 +45,6 @@ public class Student {
 		Student 홍길동 = new Student();
 		System.out.println("총 점 : " + 서민아.total);
 		System.out.println("평 균 : " + 서민아.average);
-
 	}
 
 }
