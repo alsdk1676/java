@@ -160,79 +160,125 @@ public class LambdaResult2 {
 //        return (a, b) -> a - b;
 //    }
 //
-//    public static void main(String[] args) {
-//        // 예시 입력
-//        String input1 = "7 + 35 - 9";
-//        String input2 = "-9 + 8 + 10";
-//
-//        // OperCheck 인터페이스를 람다식으로 구현
-//        OperCheck operCheck = expression -> expression.split(" ");
-//
-//        // 각 식을 연산하는 함수형 인터페이스
-//        Calc calculate = (number1, number2) -> {
-//            int result = number1;
-//            String[] elements = operCheck.getOpers(input1);
-//            for (int i = 1; i < elements.length; i += 2) {
-//                String oper = elements[i];
-//                int number = Integer.parseInt(elements[i + 1]);
-//                if (oper.equals("+")) {
-//                    result = add().apply(result, number);
-//                } else if (oper.equals("-")) {
-//                    result = subtract().apply(result, number);
-//                }
-//            }
-//            return result;
-//        };
-//
-//        // 결과 출력
-//        System.out.println(calculate.calc(7, Integer.parseInt(input1.split(" ")[2]))); // 출력: 33
-//        System.out.println(calculate.calc(-9, Integer.parseInt(input2.split(" ")[2]))); // 출력: 9
-//    }
-//}
+
 
 
 //package lambdaExpert;
 //
-//import java.util.function.BiFunction;
-//import java.util.function.Function;
+//import java.util.Scanner;
+//import java.util.ArrayList;
+//import java.util.List;
 //
 //public class MyMath {
+//	
+//    // 연산자 1개를 전달 받아서 알맞게 연산하도록 람다식을 구현
+//    public static Calc caculater(String oper) {
+//        return switch (oper) {
+//            case "+" -> (a, b) -> a + b;
+//            case "-" -> (a, b) -> a - b;
+//            case "*" -> (a, b) -> a * b;
+//            case "/" -> (a, b) -> a / b;
+//            default -> throw new IllegalArgumentException("Invalid operator: " + oper);
+//        };
+//    }
 //
-//    // 덧셈 인터페이스를 리턴하는 static 메소드
-//    public static Calc calculator(String oper) {
-//        switch (oper) {
-//            case "+":
-//                return (a, b) -> a + b;
-//            case "-":
-//                return (a, b) -> a - b;
-//            default:
-//                throw new IllegalArgumentException("Invalid operator");
+//    // 수식에서 연산자 기준으로 계산 처리하기
+//    public static int calculate(String inputCalc) {
+//        // 숫자가 들어갈 배열 선언
+//        String[] array = null, operArray = null;
+//        int result = 0;
+//
+//        // 숫자만 추출해서 배열에 넣기
+//        array = inputCalc.split("\\+|\\-|\\*|\\/");
+//        List<Integer> numbers = new ArrayList<>();
+//        for (String num : array) {
+//            numbers.add(Integer.parseInt(num.trim()));
 //        }
+//
+//        // 연산자만 추출해서 배열에 넣기
+//        StringBuilder opers = new StringBuilder();
+//        for (int i = 0; i < inputCalc.length(); i++) {
+//            if (inputCalc.charAt(i) == '+' || inputCalc.charAt(i) == '-' || inputCalc.charAt(i) == '*' || inputCalc.charAt(i) == '/') {
+//                opers.append(inputCalc.charAt(i));
+//            }
+//        }
+//       
+//        operArray = opers.toString().split(""); // 연산자 배열로 변환
+//
+//        // 1. 먼저 *, / 연산을 수행
+//        numbers = applyOperations(numbers, operArray, "*", "/");
+//
+//        // 2. 이후 +, - 연산을 수행
+//        numbers = applyOperations(numbers, operArray, "+", "-");
+//
+//        // 최종 결과는 numbers 배열에 남은 마지막 값
+//        result = numbers.get(0);
+//        
+//        return result;
+//    }
+//
+//    // *, / 연산을 먼저 계산하는 메서드
+//    public static List<Integer> applyOperations(List<Integer> numbers, String[] operArray, String targetOper1, String targetOper2) {
+//        List<Integer> newNumbers = new ArrayList<>();
+//        List<String> newOperArray = new ArrayList<>();
+//
+//        int i = 0;
+//        while (i < operArray.length) {
+//            String oper = operArray[i];
+//            if (oper.equals(targetOper1) || oper.equals(targetOper2)) {
+//                // 연산을 수행
+//                int num1 = numbers.get(newNumbers.size());
+//                int num2 = numbers.get(i + 1);
+//                int result = caculater(oper).operate(num1, num2);
+//
+//                // 연산 결과를 새로운 리스트에 반영
+//                newNumbers.set(newNumbers.size() - 1, result);
+//            } else {
+//                // 연산하지 않은 숫자는 그대로 새로운 리스트에 추가
+//                newNumbers.add(numbers.get(i + 1));
+//                newOperArray.add(oper);
+//            }
+//            i++;
+//        }
+//
+//        // 마지막 숫자 추가
+//        if (newNumbers.size() < numbers.size()) {
+//            newNumbers.add(numbers.get(numbers.size() - 1));
+//        }
+//
+//        // 연산자 리스트를 갱신
+//        operArray = newOperArray.toArray(new String[0]);
+//
+//        return newNumbers;
 //    }
 //
 //    public static void main(String[] args) {
-//        // 예시 입력
-//        String input1 = "7 + 35 - 9";
-//        String input2 = "-9 + 8 + 10";
+//        // 스캐너 임포트
+//        Scanner sc = new Scanner(System.in);
+//
+//        // 숫자가 들어갈 배열 선언
+//        String inputCalc = sc.nextLine(); // 사용자 입력을 받는다.
 //        
-//        // OperCheck 인터페이스를 람다식으로 구현
-//        OperCheck operCheck = expression -> expression.split("(?<=\\d)(?=\\D)|(?<=\\D)(?=\\d)");
+//        // 계산 처리 및 결과 출력
+//        int result = calculate(inputCalc);
+//        System.out.println(result);
 //
-//        // 수식을 받아서 알맞게 연산하는 함수
-//        Function<String, Integer> evaluateExpression = expression -> {
-//            String[] elements = operCheck.getOpers(expression);
-//            int result = Integer.parseInt(elements[0].trim());
-//            for (int i = 1; i < elements.length; i += 2) {
-//                String oper = elements[i].trim();
-//                int number = Integer.parseInt(elements[i + 1].trim());
-//                result = calculator(oper).calc(result, number);
-//            }
-//            return result;
-//        };
-//
-//        // 결과 출력
-//        System.out.println(evaluateExpression.apply(input1)); // 출력: 33
-//        System.out.println(evaluateExpression.apply(input2)); // 출력: 9
+//        sc.close();
 //    }
 //}
 
+//연산자 1개를 전달 받아서 알맞게 연산하도록 함수형 인터페이스를 구현
+//public static Calc caculater(String oper) {
+// if (oper.equals("+")) {  (a, b) -> a + b;
+// } else if (oper.equals("-")) {
+//     return (a, b) -> a - b;
+// } else if (oper.equals("*")) {
+//     return (a, b) -> a * b;
+// } else if (oper.equals("/")) {
+//     return (a, b) -> a / b;
+// } else {
+//     throw new IllegalArgumentException("Invalid operator: " + oper);
+// }
+//}
+
+//System.out.println(Arrays.toString(operArray));  // 연산자 배열 출력: [+,-,*]
