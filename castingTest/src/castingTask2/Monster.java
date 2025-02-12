@@ -1,6 +1,6 @@
 package castingTask2;
 
-//Fairy, Human, Orc 클래스에서 공통된 부분을 부모 클래스인 Monster에서 처리하고 있음
+//Fairy, Human, Orc 클래스에서 공통된 부분을 부모 클래스인 Monster에서 처리
 
 public class Monster {
 	String name;
