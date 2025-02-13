@@ -3,7 +3,7 @@ package objectTest;// 기본 자료형의 불변성 ABC가 선언되어있는 �
 
 public class EqualsTest {
    public static void main(String[] args) {
-      String data1 = "ABC";
+      String data1 = "ABC";0
       String data2 = "ABC";
       String data3 = new String("ABC");
       String data4 = new String("ABC");
