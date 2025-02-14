@@ -22,7 +22,6 @@ public class Sports { // Object : 모든 클래스의 부모 (extends Object 생
 	}
 	
 //	alt + shift + s -> r -> alt + a -> r -> getter, setter
-	
 
 	public String getType() {
 		return type;
