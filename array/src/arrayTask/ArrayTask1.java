@@ -23,15 +23,15 @@ public class ArrayTask1 {
 ////			System.out.println(arr2[i]);
 //		}
 //		
-////      1~100까지 배열에 담은 후 홀수만 출력
+//      1~100까지 배열에 담은 후 홀수만 출력
 //		int[] arr3 = new int[100];
 //		for(int i = 0; i < arr3.length; i++) {
 //			arr3[i] = i + 1;
 //			if(i % 2 == 0) {
-////				System.out.println(arr3[i]);
+//				System.out.println(arr3[i]);
 //			}
 //		}
-//
+
 //      
 ////      실버
 ////      1~100까지 배열에 담은 후 짝수의 합 출력

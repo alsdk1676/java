@@ -16,8 +16,8 @@ public class Print {
 		System.out.println("hello, world!");
 
 //		줄 복사 Ctrl + Alt + 화살표 위 아래
-		System.out.println("김세환");
-		System.out.println("20");
+		System.out.println("서민아");
+		System.out.println("26");
 		
 //		콘솔 출력 Ctrl + F11 
 		System.out.print("점심 메뉴\n");

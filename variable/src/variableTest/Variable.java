@@ -10,7 +10,7 @@ public class Variable {
 //		double d = 10;
 		
 		boolean e = true; // 논리 1byte
-		char f = '김'; // 문자형 2byte
+		char f = '서'; // 문자형 2byte
 		String g = "서민아"; // 문자열 ? 
 		
 		System.out.println(a);

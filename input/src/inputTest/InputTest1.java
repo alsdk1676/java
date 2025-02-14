@@ -9,7 +9,7 @@ public class InputTest1 {
 		String message = "이름을 입력하세요", lastName = null, firstName = null, name = null; // name에 초기값 null 넣기
 		
 		System.out.println(message);
-//		String name = sc.next(); // sc.next()의 return type : String
+//		String name = sc.next(); // sc.next()의 return 타입 : String
 //		lastName = sc.next();
 //		firstName = sc.next(); // 띄어쓰기를 기준으로 구분점으로 때문에 띄어쓰기 사용할 시 변수 따로 설명하기
 //		name = lastName + firstName;

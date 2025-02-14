@@ -31,12 +31,13 @@ public class ForTask1 {
 		System.out.println(result);
 		
 //      1~n까지의 합을 출력하기
-//		int result2 = 0;
+//		int result2 = 0, n = 0;
 //		Scanner sc = new Scanner(System.in);
-//		String message = "n값을 입력하세요.";
+//		String message = "정수 n값을 입력하세요.";
 //		System.out.println(message);
-//		int n = sc.nextInt();
-//		for(int i = 0; i <= n; i ++) {
+//		
+//		n = sc.nextInt();
+//		for(int i = 0; i <= n; i++) {
 //			result2 += i;
 //		}
 //		System.out.println("결과 : " + result2);
@@ -49,23 +50,24 @@ public class ForTask1 {
 		for(int i = 65; i < 71; i++) {
 			System.out.print((char)i);
 		}
+
 //		강사님 풀이
-		char a = 'A';
+//		char a = 'A';
 //		for(int i = 0; i < 6; i++) {
 //			System.out.print((char)(a + i));
 //		}
 
 		
 //      A~F까지 중 C를 제외하고 출력하기
-//		for(char c = 'A'; c <= 'F'; c++) {
-//			if (c == 'C') { continue; }
-//			System.out.println(c);
-//		}
-		
-		for(int i = 65; i < 71; i++) {
-			if(i == 67) { continue; }
-			System.out.print((char)i);
+		for(char c = 'A'; c <= 'F'; c++) {
+			if (c == 'C') { continue; }
+			System.out.println(c);
 		}
+		
+//		for(int i = 65; i < 71; i++) {
+//			if(i == 67) { continue; }
+//			System.out.print((char)i);
+//		}
 
 //		강사님 풀이
 //		for(int i = 0; i < 5; i++) {
@@ -80,10 +82,10 @@ public class ForTask1 {
 //			for (int j = 0; j < 5; j ++)
 //			System.out.print(j);
 //		}
-
-		for(int i = 0; i < 5; i++) {
-			 System.out.print(i); // 01234
-		}
+//
+//		for(int i = 0; i < 5; i++) {
+//			 System.out.print(i); // 01234
+//		}
 		
 //		강사님 풀이
 //		for(int i = 0; i < 15; i++) {
@@ -92,11 +94,12 @@ public class ForTask1 {
 		
 		
 //      aBcDeF...Z까지 출력하기
+
 //		강사님 풀이
-		int gap = 'a' - 'A';
-		for(int i = 0; i < 26; i++) {
-			System.out.print(i % 2 == 0 ? (char)(a + gap + i) : (char)(a + i));
-		}
+//		int gap = 'a' - 'A';
+//		for(int i = 0; i < 26; i++) {
+//			System.out.print(i % 2 == 0 ? (char)(a + gap + i) : (char)(a + i));
+//		}
 
 		
 //      
@@ -118,7 +121,7 @@ public class ForTask1 {
 //        int n = 5;  // 출력할 줄 수
 //        for (int i = 1; i <= n; i++) {
 //            for (int j = 1; j <= n - i; j++) {
-//                System.out.print(" ");
+//                System.out.pr\int(" ");
 //            }
 //            for (int k = 1; k <= (2 * i - 1); k++) {
 //                System.out.print("*");
