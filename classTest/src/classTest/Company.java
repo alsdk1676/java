@@ -33,12 +33,12 @@ public class Company {
 		Company employee3 = new Company("장보고", 35);
 		Company employee4 = new Company("이순신", 40);
 		
-		employee1.income += 10_000;
+		employee1.income += 10_000; // income은 instance 변수이기 때문에 객체를 통해 접근
 		employee2.income += 1_000;
 		employee3.income += 2_000;
 		employee4.income -= 20_000;
 		
-		Company.total += employee1.income;
+		Company.total += employee1.income; // total은 static 변수이기 때문에 클래스명에 바로 접근 가능
 		Company.total += employee2.income;
 		Company.total += employee3.income;
 		Company.total += employee4.income;

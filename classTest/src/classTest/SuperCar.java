@@ -33,6 +33,7 @@ public class SuperCar {
 		this.color = color;
 		this.price = price;
 	}
+	
 //	비밀번호 설정한 경우
 	public SuperCar(String brand, String color, long price, String password) {
 		this.brand = brand;
@@ -41,7 +42,7 @@ public class SuperCar {
 		this.password = password;
 	}
 	
-// 메서드는 하나의 기능 => 기능 분리 (재사용성 높아짐)
+// 메서드는 하나의 기능만 수행 => 기능 분리 (재사용성 높아짐)
 //	시동을 켜기
 	void engineStart() {
 		this.engine = true;
@@ -62,7 +63,7 @@ public class SuperCar {
 		return this.password.equals(password); // 문자열끼리 비교할 때 : equals
 	}
 	
-//	프로그램은 항상 메인에서 !
+//	프로그램은 항상 메인에서 실행 !
 	public static void main(String[] args) {
 		SuperCar ferrari = new SuperCar("Ferrari", "Red", 700_000_000, "7777"); // 클래스 호출
 		Scanner sc = new Scanner(System.in);

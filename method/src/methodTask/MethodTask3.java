@@ -76,7 +76,12 @@ public class MethodTask3 {
 		num5 = sc.nextInt();
 		
 		int[] newArray = mt3.divisionNum(num4, num5);
-		System.out.println(newArray);
+//		System.out.println(newArray);
+		
+		 System.out.print("결과: ");
+	        for (int i = 0; i < newArray.length; i++) {
+	            System.out.print(newArray[i] + " ");
+	        }
 		
 		
 //		String message3 = "n 값을 입력하세요\nex) 5";

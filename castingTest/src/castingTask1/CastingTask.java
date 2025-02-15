@@ -11,7 +11,7 @@ public class CastingTask {
 	
 	public void checkVideo(Video video) {
 //		분류
-//		if(갹체 instanceof 클래스)
+//		if(객체 instanceof 클래스)
 		if(video instanceof Drama) {
 			Drama drama = (Drama)video; // 다운캐스팅 : Video 타입을 Drama로 변환
 			drama.sellGoods(); // Drama 객체의 메서드 호출
