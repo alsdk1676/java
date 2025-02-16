@@ -8,6 +8,7 @@ public class Fairy extends Monster{
 	
 	@Override
 	void get() {
+//		super.get();
 		System.out.println("날개를 얻었습니다.");
 	}
 }
