@@ -48,6 +48,11 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", phone=" + phone + "]";
+	}
 
 	@Override
 	public int hashCode() {

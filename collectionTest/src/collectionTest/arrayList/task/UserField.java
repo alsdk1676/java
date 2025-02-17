@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class UserField {
 	public ArrayList<User> users = DBConnecter.users;
 	public static String userId; // session
+	final String SALT = "company";
+	final int KEY = 300;
 	
 //	아이디 검사
 	public User checkId(String id) {
@@ -73,24 +75,25 @@ public class UserField {
 	
 	
 //	암호화
-//	'A' * userId + I ,,,
-	public void encrypt(User user) {
-		String encryptPassword = "";
-		for(int i = 0; i < password.length(); i++) {
-			encryptPassword += (char)(password.charAt(i) * KEY)
+	public String encrypt(String password) {
+		String encryptPassword = SALT + password;
+		String encryptedPassword = "";
+		for(int i = 0; i < encryptPassword.length(); i++) {
+			encryptedPassword += (char)(encryptPassword.charAt(i) * KEY);
 		}
+		return encryptedPassword;
 	}
-
-	
 	
 //	비밀번호 변경(마이페이지)
 //	비밀번호 변경(30일)
 //	인증번호 전송
-//	인증번호 확인
+//	인증번호 확인	
+	
 	
 	public static void main(String[] args) {
 		UserField uf = new UserField();
-		System.out.println(uf.encrypt("abcdefg"));
+		System.out.println(uf.encrypt("abcdefg")); 
+		
 	}
 	
 }
