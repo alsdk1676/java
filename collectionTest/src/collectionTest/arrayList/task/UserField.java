@@ -8,9 +8,9 @@ public class UserField {
 	final String SALT = "company";
 	final int KEY = 300;
 	
-//	아이디 검사
+//	아이디 검사 : 주어진 ID가 이미 존재하는지 확인
 	public User checkId(String id) {
-		for(User user : users) { // 화면쪽 반복문은 빠른for문 사용 =>  얼마나 들어올지 모르기 떄문
+		for(User user : users) { // 화면쪽 반복문은 빠른 for문 사용 =>  얼마나 들어올지 모르기 떄문
 			if(user.getId().equals(id)) {
 				return user; // user를 리턴했으니까 User 타입
 			}
@@ -18,25 +18,13 @@ public class UserField {
 		return null;
 	}
 	
-//	회원가입
-//	아이디, 회원가입 입력
-//	이름, 번호 입력 => 일치하는지 확인
+//	회원가입 : 주어진 User 객체로 회원가입을 처리
 //	public User join(String id, String name, String password, String phone) {
 	public void join(User user) {
 		User userInDB = checkId(user.getId());
-		if(userInDB == null) {
-			users.add(user);
+		if(userInDB == null) { // ID가 이미 존재하지 않으면
+			users.add(user);  // users 리스트에 해당 User 추가
 		}		
-//		for(User user : users) {
-//			if(user.getName().equals(name)) { // 이름
-//				return user;
-//			} if(user.getPhone().equals(phone)) { // 번호
-//				return user;
-//			} if(user.getId().isEmpty()) {
-//				System.out.println("아이디를 입력하세요.");
-//			}
-//		}
-//		return null;
 	}
 	
 //	로그인
@@ -67,9 +55,6 @@ public class UserField {
 	
 //	로그아웃
 	public void logout() { // 로그아웃은 로그인 전제 (화면쪽에 추가로 검증할 필요없움)
-//		User userInDB = checkId(user.getId());
-//		if(userInDB == null) {
-//		}
 		userId = null;
 	}
 	
