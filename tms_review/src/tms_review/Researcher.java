@@ -3,70 +3,94 @@ package tms_review;
 import java.util.Arrays;
 import java.util.Objects;
 
-//-로또(lotto), 조사(search)
-//- work() 메서드를 재정의하며 "연구원은 조사(search)중이다."를 출력한다.
-//- 조사(search)은 초기화된 필드의 값으로 출력한다.
+public class Researcher extends Person{
+   
+//   long id, String name, int age, String phone, String job
+   
+   private long id;
+   private String[] lotto;
+   private String search;
+   
+   public Researcher() {;}
 
-public class Researcher extends Person {
-	private String[] lotto;
-	private String search;
-	
-	public Researcher() {;}
+   public Researcher(long id, String name, int age, String phone, String job, String search) {
+      super(id, name, age, phone, job);
+      this.search = search;
+   }
 
-	public Researcher(String id, String name, int age, String phone, String job, String[] lotto, String search) {
-		super(id, name, age, phone, job);
-		this.lotto = lotto;
-		this.search = search;
-	}
-	
+   public long getId() {
+      return id;
+   }
 
-	public String[] getLotto() {
-		return lotto;
-	}
+   public void setId(long id) {
+      this.id = id;
+   }
 
-	public void setLotto(String[] lotto) {
-		this.lotto = lotto;
-	}
+   public String[] getLotto() {
+      return lotto;
+   }
 
-	public String getSearch() {
-		return search;
-	}
+   public void setLotto(String[] lotto) {
+      this.lotto = lotto;
+   }
 
-	public void setSearch(String search) {
-		this.search = search;
-	}
-	
+   public String getSearch() {
+      return search;
+   }
 
-	@Override
-	public String toString() {
-		return "Researcher [lotto=" + Arrays.toString(lotto) + ", search=" + search + "]";
-	}
+   public void setSearch(String search) {
+      this.search = search;
+   }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(lotto);
-		result = prime * result + Objects.hash(search);
-		return result;
-	}
+   @Override
+   public int hashCode() {
+      final int prime = 31;
+      int result = super.hashCode();
+      result = prime * result + Objects.hash(id);
+      return result;
+   }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Researcher other = (Researcher) obj;
-		return Arrays.equals(lotto, other.lotto) && Objects.equals(search, other.search);
-	}
-	
-	
-	
-	
-	
-	
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj)
+         return true;
+      if (!super.equals(obj))
+         return false;
+      if (getClass() != obj.getClass())
+         return false;
+      Researcher other = (Researcher) obj;
+      return id == other.id;
+   }
 
+   @Override
+   public String toString() {
+      return "Researcher [id=" + id + ", lotto=" + Arrays.toString(lotto) + ", search=" + search + "]";
+   }
+   
+   @Override
+   public void work() {
+      System.out.println("연구원은" + this.getSearch() + "중입니다"); 
+   }
+
+   public void investLab(boolean lucky) {
+      if(lucky) {
+         System.out.println("연구에 투자한다");
+      }else {
+         System.out.println("나에게 투자한다");
+      }
+   }
+   
+   public void buyFood(boolean lucky) {
+      if(lucky) {
+         System.out.println("지인에게 밥을 산다");
+      }else {
+         System.out.println("집에 쌀을 산다");
+      }
+   }
+   
 }
+
+
+
+
+
