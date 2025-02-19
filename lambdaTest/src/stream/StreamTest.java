@@ -12,7 +12,8 @@ import java.util.stream.IntStream;
 public class StreamTest {
 	public static void main(String[] args) {
 //		IntStream : 시작점부터 끝점까지 정해준다. 1씩 증가 (횟수만 정의)
-		IntStream.range(0, 10); // 0 ~ 9까지
+		IntStream.range(0, 10);
+		System.out.println(IntStream.range(0, 10)); // 0 ~ 9까지
 		
 //		IntStream.range(0, 10).forEach((num) -> { System.out.println(num); }); // forEach는 return 없음 (기능만) => 중괄호 생략 안됨
 //		IntStream.range(0, 10).forEach(System.out::println); // 참조형 (받자마자 사용할 때)
@@ -22,7 +23,7 @@ public class StreamTest {
 //		IntStream.rangeClosed(1, 10); // 0 ~ 10까지
 //		IntStream.rangeClosed(0, 10).forEach((num) -> datas.add(num));
 		IntStream.rangeClosed(1, 10).forEach(datas::add); // forEach()는 항상 마지막에 사용하기 !
-//		datas.forEach(System.out::println);
+		datas.forEach(System.out::println);
 		
 		
 //		10 ~ 1까지 ArrayList에 담고 출력하기, 참조형 x 연산 후 add하기
@@ -31,26 +32,26 @@ public class StreamTest {
 			datas2.add(10 - num);
 			});
 //		IntStream.rangeClosed(10, 1).forEach(datas2::add); // 참조형
-//		datas2.forEach(System.out::println);
+		datas2.forEach(System.out::println);
 		
 //		data2 인덱스 0부터 4까지 삭제
 //		참조형 사용하면 안됨
 		IntStream.range(0, 5).forEach( num -> {
 			datas2.remove(0);
 		});
-//		datas2.forEach(System.out::println);
+		datas2.forEach(System.out::println);
 		
 //		문자열 stream
 //		chars() : 문자열을 Intstream으로 변환
 		String data3 = "ABCDEFG";
 		String data4 = "ㄱㄴㄷㄹ";
-//		data3.chars().forEach(System.out::println);
-//		data4.chars().forEach(System.out::println);
+		data3.chars().forEach(System.out::println); // 65 66 67 68 69 70 71
+		data4.chars().forEach(System.out::println);
 		
-//		data4.chars().forEach((c) -> { System.out.println((char)c); });
+		data4.chars().forEach((c) -> { System.out.println((char)c); }); // ㄱ ㄴ ㄷ ㄹ
 
 //		.map()
-//		data4.chars().map((c) -> c + 4).forEach(c -> { System.out.println((char)c); }); // 형변환 마지막에
+		data4.chars().map((c) -> c + 4).forEach(c -> { System.out.println((char)c); }); // 형변환 마지막에
 //		data4.chars().map((c) -> (char)(c + 4)).forEach(System.out::println); // 형병환 변형 안됨
 		
 		
