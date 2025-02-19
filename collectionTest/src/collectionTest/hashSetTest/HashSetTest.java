@@ -18,7 +18,7 @@ public class HashSetTest {
 		System.out.println(mbtiType);
 		
 //		Iterator
-//		순서가 없을 때 순서를 부여하는 자료구조 , iterator을 도움을 받아서 가져와야한다.
+//		순서가 없을 때 순서를 부여하는 자료구조, iterator을 도움을 받아서 가져와야한다.
 		Iterator<String> iter = mbtiType.iterator();
 //		iter.hasNext() // 가져올 게 없으면 false
 		while(iter.hasNext()) { // 순서를 모르기 때문에 

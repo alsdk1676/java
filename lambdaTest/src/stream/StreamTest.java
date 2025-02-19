@@ -21,7 +21,7 @@ public class StreamTest {
 		ArrayList<Integer> datas = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 //		IntStream.rangeClosed(1, 10); // 0 ~ 10까지
 //		IntStream.rangeClosed(0, 10).forEach((num) -> datas.add(num));
-		IntStream.rangeClosed(1, 10).forEach(datas::add); // forEach()는 항상 마지막 
+		IntStream.rangeClosed(1, 10).forEach(datas::add); // forEach()는 항상 마지막에 사용하기 !
 //		datas.forEach(System.out::println);
 		
 		
