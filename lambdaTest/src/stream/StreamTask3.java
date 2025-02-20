@@ -2,7 +2,9 @@ package stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class StreamTask3 {
@@ -13,7 +15,7 @@ public class StreamTask3 {
 //		int result = 0;
 //		numbers.stream().map(n -> result += n);
 		
-//      1) 1~10까지 ArrayList에 담고 출력하기
+//      1) 1~50까지 ArrayList에 담고 출력하기
 		ArrayList<Integer> numbers1 = new ArrayList<Integer>();
 		
 //		반복할 횟수를 알고 있을 때 : for
@@ -31,22 +33,23 @@ public class StreamTask3 {
 		
 //		값을 넣음
 //		numbers1.forEach(null);
-		IntStream.rangeClosed(1, 10).forEach(n -> { numbers1.add(n); });
+		IntStream.rangeClosed(1, 50).forEach(n -> { numbers1.add(n); });
 //		값을 출력
 		numbers1.forEach(num -> { System.out.println(num); });
 		
 		
 //      2) 1~10을 ArrayList에 담고 홀수만 모두 출력하기
 		ArrayList<Integer> numbers2 = new ArrayList<Integer>();
-		
 		IntStream.rangeClosed(1, 10).filter(n -> n % 2 != 0).forEach(n -> { numbers2.add(n); });
 		numbers2.forEach(num -> { System.out.println(num); });
 
 		
-//      3) 1~10까지 ArrayList에 짝수만 담고 출력하기
+//      3) 1~50까지 ArrayList에 짝수만 담고 출력하기
 		ArrayList<Integer> numbers3 = new ArrayList<Integer>();
-		IntStream.range(1, 11).filter(n -> n % 2 == 0).forEach(n -> { numbers3.add(n); });
+		IntStream.range(1, 51).filter(n -> n % 2 == 0).forEach(n -> { numbers3.add(n); });
 		numbers3.forEach(num -> { System.out.println(num); });
+		
+//		풀이2 (for문 -> add)
 		
 //      4) a~z까지 ArrayList에 담고 출력하기
 		ArrayList<Character> chars1 = new ArrayList<Character>();
@@ -54,18 +57,25 @@ public class StreamTask3 {
 		chars1.forEach(System.out::println);
 		
 //		4-1) a~z까지 A~Z로 변경해서 출력하기
-//		ArrayList<Character> chars2 = new ArrayList<Character>();
-//		IntStream.rangeClosed('a', 'z').map(i -> (char)i).map(i -> Character.toUpperCase((char)i)).forEach(c -> chars2.add(c));
-//		chars2.forEach(System.out::println);
+		ArrayList<Character> chars2 = new ArrayList<Character>();
+		IntStream.rangeClosed('a', 'z').map(i -> (char)i).map(Character::toUpperCase).forEach(c -> chars2.add((char)c));
+		chars2.forEach(System.out::println);
+		
+//		풀이 2
+//		ArrayList<Integer> data = new ArrayList<Integer>();
+//		IntStream.rangeClosed('a', 'z').forEach(data::add);
 		
 //      5) a~z까지 ex) aceg... 하나씩 건너뛰고 ArrayList에 담고 출력하기
+		ArrayList<Character> chars3 = new ArrayList<Character>();
+		IntStream.rangeClosed('a', 'z').filter(i -> i % 2 == 1).map(i -> (char)i).forEach(c -> chars3.add((char)c));
+		chars3.forEach(System.out::println);
 		
 //      6) 1~30까지 ArrayList에 담고 10~20만 출력하기
 		ArrayList<Integer> numbers4 = new ArrayList<Integer>();
 		IntStream.rangeClosed(1, 30).filter(num -> num >= 10 && num <= 20).forEach(num -> numbers4.add(num));
 		numbers4.forEach(System.out::println);
 		
-//      7) 1~10까지 ArrayList에 담고 짝수만 모두 더해서 출력하기
+//      7) 1~10까지 ArrayList에 담고 짝수만 모두 더해서 출력하기 (담으면 forEach)
 		ArrayList<Integer> numbers5 = new ArrayList<Integer>();
 		IntStream.rangeClosed(1, 10).filter(num -> num % 2 == 0).forEach(num -> numbers5.add(num));
 		
@@ -96,12 +106,24 @@ public class StreamTask3 {
 //		numbers6.forEach(num -> sum2 += num);		
 //		System.out.println(sum2);
 		
+		// reduce
+		int sum2 = numbers6.stream().reduce(0, (a, b) -> a + b);
+		System.out.println(sum2);
+		
 //      10) ArrayList에 있는 모든 값을 더한 후 출력 {10, 20, 30, 40, 50, 60}
-//		ArrayList<Integer> task = new ArrayList<Integer>(Arrays.asList(10, 20, 30, 40, 50));
-		ArrayList<Integer> task = new ArrayList<Integer>(Arrays.asList());
+		ArrayList<Integer> task = new ArrayList<Integer>(Arrays.asList(10, 20, 30, 40, 50));
+		int sum3 = task.stream().reduce(0, (a, b) -> a + b);
+		System.out.println(sum3);
 //		int data = task.stream().reduce(0, (a, b) -> a + b);
-		Optional<Integer> data = task.stream().reduce((a, b) -> a + b);
-		System.out.println(data);
+//		Optional<Integer> data = task.stream().reduce((a, b) -> a + b);
+//		System.out.println(data);
+		
+//		강사님 풀이
+//		int[] datas10 = new int[] {10, 20, 30, 40, 50, 60};
+//		List<Integer> data10 = Arrays.stream(datas10).boxed().collect(Collectors.toList());
+//		Integer totalResult = data10.stream().reduce(0, (a, b) -> a + b);
+//		System.out.println(totalResult);
+		
 		
 		
 //      2) 각각의 Member가 들어가 있는 ArrayList<Member>가 존재한다.
