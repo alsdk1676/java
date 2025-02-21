@@ -16,7 +16,6 @@ public class Client02 {
 		BufferedWriter out = null; // 양방향이기 떄문에 버퍼 불러오기
 		Scanner sc = new Scanner(System.in);
 		
-//		String serverIp = "";
 		String serverIp = "localhost"; // 내가 나한테 접속할 때
 		
 		try {
