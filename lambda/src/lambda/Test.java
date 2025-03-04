@@ -113,3 +113,42 @@ public class Test {
         System.out.println("결과는? : " + result);
     }
 }
+
+
+//회원탈퇴
+public boolean deleteMember(String memberId) {
+ connection = DBConnecter.getConnect();
+ String query = "DELETE FROM TBL_MEMBER WHERE MEMBER_ID = ?";
+ boolean check = true;
+ 
+ try {
+     preparedStatement = connection.prepareStatement(query);
+     preparedStatement.setString(1, memberId);
+     
+     int result = preparedStatement.executeUpdate();
+     if(result == 0) {
+         check = false; // 삭제가 실패한 경우
+     }
+     
+ } catch (SQLException e) {
+     check = false;
+     e.printStackTrace();
+     
+ } finally {
+     try {
+         if(preparedStatement != null) {
+             preparedStatement.close();
+         }
+         if(connection != null) {
+             connection.close();
+         }
+     } catch (SQLException e) {
+         System.out.println("deleteMember 쿼리 실행 후 오류");
+         e.printStackTrace();
+         throw new RuntimeException();
+     }
+
+ }
+ 
+ return check;
+}
