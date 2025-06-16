@@ -4,7 +4,7 @@ package abstractTest;
 public abstract class Electronics { 
 	
 //	추상 메서드
-//	전자기기는 키고끄는 방법이 다양하기 때문에 당장 구현 불가능
+//	전자기기는 키고 끄는 방법이 다양하기 때문에 당장 구현 불가능
 //	하지만 반드시 필요한 기능
 //	구현할 수 없기 때문에 선언만 해놓기 => 메서드명();
 	public abstract void on(); 
