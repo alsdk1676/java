@@ -1,6 +1,5 @@
 package abstractTest;
 
-// 오류원인1) 부모 Pet은 구현이 안되서 메모리에 올라갈 수 없는 상태 => implements
 public class Cat2 implements Pet {
 	
 	@Override

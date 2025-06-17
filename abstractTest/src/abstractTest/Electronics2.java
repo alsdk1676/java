@@ -2,7 +2,6 @@ package abstractTest;
 
 public abstract class Electronics2 { 
 
-
 	public abstract void on(); 
 	public abstract void off();
 	
